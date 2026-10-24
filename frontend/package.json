@@ -1,0 +1,23 @@
+{
+  "name": "smart-notes-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite --config vite.config.js",
+    "build": "vite build --config vite.config.js",
+    "preview": "vite preview --config vite.config.js"
+  },
+  "dependencies": {
+    "html2canvas": "^1.4.1",
+    "jspdf": "^4.2.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.11",
+    "tailwindcss": "^4.1.11",
+    "vite": "^7.0.6"
+  }
+}

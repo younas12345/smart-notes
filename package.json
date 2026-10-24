@@ -1,0 +1,24 @@
+{
+  "name": "ai-notes-apps",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "start": "npm run start --workspace=backend",
+    "dev": "npm run dev --workspace=frontend",
+    "dev:backend": "npm run dev --workspace=backend",
+    "dev:full": "concurrently -k -n backend,frontend \"npm run dev --workspace=backend\" \"npm run dev --workspace=frontend\"",
+    "build": "npm run build --workspace=frontend",
+    "preview": "npm run preview --workspace=frontend",
+    "test": "npm test --workspace=backend"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.6"
+  }
+}

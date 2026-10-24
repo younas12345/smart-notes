@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+credentials/
+secrets/
+*.pem
+*.key
+service-account*.json
+node_modules/
+dist/
+frontend/dist/
+client/dist/
+server/dist/
+backend/uploads/
+backups/
+*.archive
+*.archive.gz

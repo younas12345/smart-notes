@@ -1,0 +1,27 @@
+{
+  "name": "smart-notes-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@google/genai": "^2.11.0",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.7.1",
+    "google-auth-library": "^10.9.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.7.4",
+    "nodemailer": "^10.2.0",
+    "pdfjs-dist": "5.4.296"
+  }
+}
