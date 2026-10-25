@@ -1,3 +1,4 @@
+const serverless = require('serverless-http');
 const path = require("path");
 require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
 
@@ -55,17 +56,36 @@ app.use((error, req, res, next) => {
     next(error);
 });
 
+// async function startServer() {
+//     try {
+//         await connectDatabase();
+//         const port = Number(process.env.PORT) || 3000;
+//         app.listen(port, () => {
+//             console.log(`server is running on port ${port}`);
+//         });
+//     } catch (error) {
+//         console.error("Server startup failed because the database connection could not be established.");
+//         process.exitCode = 1;
+//     }
+// }
 async function startServer() {
     try {
         await connectDatabase();
-        const port = Number(process.env.PORT) || 3000;
-        app.listen(port, () => {
-            console.log(`server is running on port ${port}`);
-        });
+        
+        if (process.env.NODE_ENV !== 'production' && !process.env.VERCEL) {
+            const port = Number(process.env.PORT) || 3000;
+            app.listen(port, () => {
+                console.log(`server is running on port ${port}`);
+            });
+        }
     } catch (error) {
         console.error("Server startup failed because the database connection could not be established.");
         process.exitCode = 1;
     }
 }
 
+// Function ko sirf ek dafa yahan call karein
 startServer();
+
+// Vercel (Serverless) ke liye app ko export kar dein
+module.exports = serverless(app);
