@@ -56,18 +56,7 @@ app.use((error, req, res, next) => {
     next(error);
 });
 
-// async function startServer() {
-//     try {
-//         await connectDatabase();
-//         const port = Number(process.env.PORT) || 3000;
-//         app.listen(port, () => {
-//             console.log(`server is running on port ${port}`);
-//         });
-//     } catch (error) {
-//         console.error("Server startup failed because the database connection could not be established.");
-//         process.exitCode = 1;
-//     }
-// }
+
 async function startServer() {
     try {
         await connectDatabase();
